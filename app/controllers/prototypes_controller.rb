@@ -1,4 +1,5 @@
 class PrototypesController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :edit, :destroy, :update]
   before_action :move_to_index, except: [:index, :show,]
   def index
     #@name = current_user.name
